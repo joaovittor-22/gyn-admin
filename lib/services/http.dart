@@ -6,7 +6,7 @@ import 'package:dio/dio.dart';
 class Api {
   Future get( urlbase, url2, [Map <String, dynamic> ? queryObj]) async {
     try {
-    var fullUrl = Uri.http(urlbase, url2, queryObj );  
+    var fullUrl = Uri.https(urlbase, url2, queryObj );  
     var response = await http.get(fullUrl);
 
     if (response.statusCode == 200) {
@@ -19,7 +19,7 @@ class Api {
   }
 
   Future post(urlbase, url2, obj, [bool ? isMap, headers]) async {
-    var fullUrl = Uri.http(urlbase, url2);
+    var fullUrl = Uri.https(urlbase, url2);
     var response = await http.post(fullUrl, body: isMap ?? false? json.encode(obj) : obj);
     if (response.statusCode == 200) {
       try {
@@ -34,7 +34,7 @@ class Api {
   }
 
 Future postForm(urlbase, url2, obj) async {
-    var fullUrl = Uri.http(urlbase, url2);
+    var fullUrl = Uri.https(urlbase, url2);
     try {
         final formData = FormData.fromMap({
           "name_place": obj["name_place"],
@@ -55,7 +55,7 @@ Future postForm(urlbase, url2, obj) async {
   }
 
 Future putForm(urlbase, url2, obj) async {
-    var fullUrl = Uri.http(urlbase, url2);
+    var fullUrl = Uri.https(urlbase, url2);
     try {
         final formData = FormData.fromMap({
           "name_place": obj["name_place"],
@@ -75,7 +75,7 @@ Future putForm(urlbase, url2, obj) async {
 
   Future delete( urlbase, url2) async {
     try {
-    var fullUrl = Uri.http(urlbase, url2 );  
+    var fullUrl = Uri.https(urlbase, url2 );  
     var response = await http.delete(fullUrl);
 
     if (response.statusCode == 200) {
@@ -94,7 +94,7 @@ Future putForm(urlbase, url2, obj) async {
 }
 
   getFullURL(urlBase, url2){
-    var fullUrl = Uri.http(urlBase, url2 ).toString();  
+    var fullUrl = Uri.https(urlBase, url2 ).toString();  
      return fullUrl;
   }
 
