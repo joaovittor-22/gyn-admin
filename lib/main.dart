@@ -42,7 +42,7 @@ class MyHomePage extends StatelessWidget {
   const MyHomePage({super.key});
   @override
   Widget build(BuildContext context) {
-    //  var width =   MediaQuery.of(context).size.width;
+     var width =   MediaQuery.of(context).size.width;
     return Column(
       children: [
         Expanded(
@@ -139,7 +139,7 @@ class MyHomePage extends StatelessWidget {
 ) ),
         ElevatedButton(
             style: ElevatedButton.styleFrom(
-              minimumSize: const Size(double.infinity, 50),
+              minimumSize:  Size(width, 50),
             ),
             onPressed: () {
               addPlace(context, "Cadastrar");
