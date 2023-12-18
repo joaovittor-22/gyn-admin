@@ -44,12 +44,8 @@ Future postForm(urlbase, url2, obj) async {
           fullUrl.toString(),
           data: formData,
         );
-                    print(obj);
-
         return response.statusCode == 200 ? response.data : null;
     } catch (e) {
-            print(e);
-
       return null;
     }
   }
@@ -67,7 +63,6 @@ Future putForm(urlbase, url2, obj) async {
         );
         return response.statusCode == 200 ? response.data : null;
     } catch (e) {
-      print(e);
       return null;
     }
   }
