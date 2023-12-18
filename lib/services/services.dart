@@ -1,7 +1,7 @@
 import 'http.dart';
 
 class Services extends Api {
-  String urlBase = 'gyn-app.onrender.com';
+  String urlBase = '';
   getList([filter, search]) async {
     var url2 = '/api/places/list';
     var res = await super.get(urlBase, url2);

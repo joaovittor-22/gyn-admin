@@ -31,8 +31,11 @@ migrate_working_dir/
 .pub/
 /build/
 
+# firebase related
+
 .firebaserc
 firebase.json
+.firebase
 # Symbolication related
 app.*.symbols
 
@@ -43,3 +46,6 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+
+# url da api
+url_services.txt
