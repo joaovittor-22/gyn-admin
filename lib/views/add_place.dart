@@ -8,10 +8,9 @@ import 'package:get/get.dart';
 import 'package:app/tools/images.dart';
 
 addPlace(context, String typeAction, [int? idPlace]) async {
-//se for editar  precisa buscar dados antes
+//buscar dados antes de editar
   var namePlaceController = TextEditingController();
-  var placeData =
-      idPlace != null ? await Services().getPlaceData(idPlace) : null;
+  var placeData = idPlace != null ? await Services().getPlaceData(idPlace) : null;
   if (placeData != null) {
     namePlaceController.value = TextEditingValue(text: placeData["name"]);
     imageUrl.value = placeData["image"] != null
